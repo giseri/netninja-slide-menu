@@ -1,0 +1,96 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #444
+}
+
+li, ul{
+    list-style-type: none;
+    padding: 0;
+    
+}
+
+main{
+    padding: 140px 40px 40px;
+    color: #bbb;
+}
+
+/* solution styles */
+.menu{
+    color: #eee;
+}
+
+header{
+    background: #333;
+    display: flex;
+    align-items: center;                            
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    color: #eee;
+}
+
+.burger{
+    display: relative;
+    font-size: 1.2em;
+    cursor: pointer;
+    z-index: 1;
+    caret-color: transparent;
+}
+
+.burger span{
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: #eee;
+    margin-bottom: 5px;
+}
+
+nav{
+    position: absolute;
+    background: #222;
+    padding: 20px;
+    padding-top: 80px;
+    height: 100%;
+    box-sizing: border-box;
+    width: 200px;
+    top: 0;
+    z-index: 0;
+    left: -200px;
+}
+
+nav a{
+    color: #fff;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+/* open state */
+nav.open{
+    left: 0px;
+}
+
+.burger.open span:nth-child(1){
+    transform: rotate(45deg) translateY(10px);
+}
+
+.burger.open span:nth-child(2){
+    opacity: 0;
+    width: 0px;
+}
+
+.burger.open span:nth-child(3){
+    transform: rotate(-45deg) translateY(-10px);
+}
+
+/* transitions */
+nav{
+    transition: left ease-in 0.3s;
+}
+
+.burger span{
+    transition: all ease-in 0.3s;
+}
